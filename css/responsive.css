@@ -5,6 +5,26 @@
 }
 
 @media(max-width:670px){
+h1{
+    font-size:100px;
+} 
+h2{
+    font-size:75px;
+}   
+h3{
+    font-size:50px;
+}   
+h4{
+    font-size:40px;
+}   
+p{
+    font-size:30px
+}
+.btn{
+    font-size:30px;
+    height: 50px;
+    width: auto;
+}
 .answerArea{
     padding:0px;
 }
