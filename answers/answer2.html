@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>回答２</title>
+    <link rel="stylesheet" href="../css/stylesheet.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <script type="text/javascript" src="../js/answer5.js"></script>
+    <script src="../js/prism.js"></script>
+    <link rel="stylesheet" href="../css/prism.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>プログラミング問題集</h1>
+            <h2>問題２の回答</h2>
+        </div>
+    </header>
+    <div class="contents">
+        <div class="container">
+            <h3>問題２</h3>
+            <p>交互に要素を取ることで、2つのリストを結合する関数を記述せよ。例えば [a, b, c]と[1, 2, 3]という2つのリストを与えると、関数は [a, 1, b, 2, c, 3]を返す。</p>
+        </div>
+    </div>
+    <!--入力欄-->
+    <div class="list-wrapper">
+        <div class="container">
+            <div class="input-form">
+                <h4 id="list1">リスト1：[a, b, c]</h4>
+                <form>
+                    <input type="text" name="add" value=d>
+                    <input class="hidden" type="text">
+                    <button class="btn" type="button" onclick="addList(1)">リストに追加</button>
+                </form>
+                <button onclick="resetList(1)">リセット</button>
+            </div>
+            <div class="input-form">
+                <h4 id="list2">リスト2：[1, 2, 3]</h4>
+                <form>
+                    <input type="text" name="add" value=4>
+                    <input class="hidden" type="text">
+                    <button class="btn" type="button" onclick="addList(2)">リストに追加</button>
+                </form>
+                <button onclick="resetList(2)">リセット</button>
+            </div>
+            <button class="btn goToAnswer" type="button" onclick="answer2()">結果を表示</button>
+        </div>
+    </div>
+    <!--回答の表示エリア-->
+    <div class="answer-wrapper">
+        <div class="container">
+            <div class="answerArea">
+                <h3 class="answer-title">Answer</h3>
+                <p id="Answer">[a, 1, b, 2, c, 3]</p>
+            </div>
+        </div>
+    </div>
+
+    <!--JavaScriptの関数を記述-->
+    <div class="code-wrapper">
+        <div class="container">
+            <h3 class="code-title">Code<span>※出力部分は割愛</span></h3>
+<pre class="line-numbers"><code class="language-javascript">
+//リストを用意
+var list1 = ["a", "b", "c"];
+var list2 = [1, 2, 3];
+var lists = [list1, list2];
+//合成後のリストを定義
+var fusionList = [];
+//list2の方が長い場合
+if(list1.length &lt;= list2.length){ 
+    for(i = 0; i &lt; list1.length; i ++){
+        fusionList.push(list1[i]); 
+        fusionList.push(list2[i]); 
+    }
+    for(j = list1.length; j &lt; list2.length; j ++){ 
+        fusionList.push(list2[j]); //list2の残りの要素を追加 } 
+}else{
+ //list1の方が長い場合 
+    for(i = 0; i &lt; list2.length; i ++) { 
+        fusionList.push(list1[i]); 
+        fusionList.push(list2[i]); 
+} 
+    for(j = list2.length; j &lt; list1.length; j ++) { 
+    fusionList.push(list1[j]); 
+    } 
+} </code></pre>
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <a class="btn back" href="../index.html">戻る</a>
+        </div>
+    </footer>
+</body>
+
+</html>

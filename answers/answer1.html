@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>回答１</title>
+    <link rel="stylesheet" href="../css/stylesheet.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <script type="text/javascript" src="../js/answer5.js"></script>
+    <script src="../js/prism.js"></script>
+    <link rel="stylesheet" href="../css/prism.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>プログラミング問題集</h1>
+            <h2>問題１の回答</h2>
+        </div>
+    </header>
+    <div class="contents">
+        <div class="container">
+            <h3>問題１</h3>
+            <p>forループ、whileループ、および再帰を使用して、リスト内の数字の合計を計算する3つの関数を記述せよ。</p>
+        </div>
+    </div>
+<!--入力欄-->
+    <div class="list-wrapper">
+        <div class="container">
+            <div class="input-form">
+                <h4 id="list">リスト：[ 1, 2, 3 ]</h4>
+                <form>
+                    <input type="number" name="addNumber" value=0>
+                    <input class="hidden" type="text">
+                    <button class="btn" type="button" onclick="addList()">リストに追加</button>
+                </form>
+                <button onclick="resetList()">リセット</button>
+            </div>
+            <button class="btn goToAnswer" type="button" onclick="answer1()">結果を表示</button>
+        </div>
+    </div>
+<!--回答の表示エリア-->
+    <div class="answer-wrapper">
+        <div class="container">
+            <div class="answerArea">
+                <h3 class="answer-title">Answer</h3>
+                <p id="answerFor">forメソッドでの回答:</p>
+                <p id="answerWhile">Whileメソッドでの回答:</p>
+                <p id="answerRecursion">再帰関数での回答:</p>
+            </div>
+        </div>
+    </div>
+
+<!--JavaScriptの関数部分-->
+    <div class="code-wrapper">
+        <div class="container">
+            <h3 class="code-title">Code<span>※出力部分は割愛</span></h3>
+<pre class="line-numbers"><code class="language-javascript">//変数を用意
+var sumFor = 0;
+var sumWhile = 0;
+var sumRecursion = 0;
+//for メソッドでの回答
+for(var i = 0; i &lt; numbers.length; i ++ ) {
+      sumFor += numbers[i]; 
+}
+//while メソッドでの回答 
+var j=0; 
+while(j &lt; numbers.length){
+    sumWhile += numbers[j]; 
+    j++; 
+}
+//再帰関数での回答 
+function recursion(k){ 
+    if(k===1){ 
+        return numbers[0]; 
+    } 
+    return numbers[k-1] + recursion(k-1); 
+} 
+sumRecursion=recursion(numbers.length);</code></pre>
+        </div>
+        
+    </div>
+    <footer>
+        <div class="container">
+            <a class="btn back" href="../index.html">戻る</a>
+        </div>
+    </footer>
+</body>
+</html>

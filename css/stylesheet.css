@@ -1,0 +1,127 @@
+/*Use in all files*/
+*{
+    margin:0px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+
+.container{
+    width:80%;
+    margin:0 auto;
+}
+
+header{
+    padding-top:50px;
+    padding-bottom:50px;
+    width:100%;
+    text-align: center;
+    background-color: aquamarine;
+}
+
+.btn{
+    display: inline-block;
+    color:#fff;
+    background-color: chocolate;
+    border:soild #000 2px;
+    border-radius:4px;
+    padding:8px 12px;
+    margin:20px;
+}
+
+.btn:hover{
+    transition: all 0.5s;
+    opacity:0.6;
+    cursor: pointer;
+}
+
+/*Use in index*/
+.contents{
+    margin-top:20px;
+}
+
+/*Use in answers*/
+.input-form{
+    padding: 20px;
+    background-color: bisque;
+    margin: 20px auto;
+    text-align: center;
+    
+    display:inline-block;
+}
+
+.input-form p {
+    padding: 20px 0;
+    text-align: center;
+}
+
+.caution{
+    color:red;
+    opacity: 0.8;
+    padding: none;
+    font-size: 12px;
+    display: inline-block;
+}
+input{
+    padding:8px 12px;
+    font-size:14px;
+    text-align: center;
+    width: 50px;
+}
+
+.hidden{
+    display:none;
+}
+
+.goToAnswer{
+    display:block;
+}
+
+.answerArea{
+    padding:30px;
+}
+
+.answer-title{
+    border-bottom:solid #555 2px;
+}
+
+.answerArea p{
+    line-height: 30px;
+    padding:0 20px;
+}
+
+details:hover{
+    cursor:pointer;
+}
+
+.fa-caret-right{
+    margin:0 3px;
+}
+
+.code-title {
+    border-bottom: solid #555 2px;
+}
+.code-title span{
+    font-weight: normal;
+    padding: 0 12px;
+    color:#555;
+    font-size: 75%;
+}
+
+footer{
+    padding:50px 0;
+}
+
+.back {
+    position: fixed;
+    bottom: 10px;
+    right: 0px;
+    background-color:#555;
+    margin: bottom 30px;
+}

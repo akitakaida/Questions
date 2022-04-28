@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>回答４</title>
+    <link rel="stylesheet" href="../css/stylesheet.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <script type="text/javascript" src="../js/answer5.js"></script>
+    <script src="../js/prism.js"></script>
+    <link rel="stylesheet" href="../css/prism.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>プログラミング問題集</h1>
+            <h2>問題４の回答</h2>
+        </div>
+    </header>
+    <div class="contents">
+        <div class="container">
+            <h3>問題４</h3>
+            <p>正の整数のリストを与えられたとき、数を並び替えて可能な最大数を返す関数を記述せよ。例えば、[50, 2, 1, 9]が与えられた時、95021が答えとなる。</p>
+        </div>
+    </div>
+    <!--入力欄-->
+    <div class="list-wrapper">
+        <div class="container">
+            <div class="input-form">
+                <h4 id="list">リスト：[50, 2, 1, 9]</h4>
+                <form class="form">
+                    <p class="caution">※正の整数を入力してください</p>
+                    <input type="number" name="addNumber" value="1">
+                    <input class="hidden" type="text">
+                    <button class="btn" type="button" onclick="addList()">リストに追加</button>
+                </form>
+                <button onclick="resetList()">リセット</button>
+            </div>
+            <button class="btn goToAnswer" type="button" onclick="answer4()">結果を表示</button>
+        </div>
+    </div>
+
+    <!--回答の表示エリア-->
+    <div class="answer-wrapper">
+        <div class="container">
+            <div class="answerArea">
+                <h3 class="answer-title">Answer</h3>
+                <p id="answer">95021</p>
+            </div>
+        </div>
+    </div>
+
+    <!--JavaScriptのCode表示部分-->
+    <div class="code-wrapper">
+        <div class="container">
+            <h3 class="code-title">Code<span>※出力部分は割愛</span></h3>
+<pre class="line-numbers"><code class="language-javascript">//全ての順列を生成
+//参考：https://qiita.com/higuma/items/5af4e62bdf4df42ce673
+function permutation(array){
+    let purmutation = [];
+    let purmutations = [];
+    function makePermutation(array, permutation, purmutations){
+        let arrayCopy;
+        let element;
+        if (array.length > 0) {
+            for (let i = 0; i &lt; array.length; i++) { 
+//arrayをすべてコピー 
+                arrayCopy = array.slice(0); 
+//コピーしたもののi番目を切り出し
+                element=arrayCopy.splice(i,1); 
+//要素の一つ減ったarrayCopyとelementが末尾に追加されたpermutationで再帰関数を呼び出し 
+                makePermutation(arrayCopy, permutation.concat(element), purmutations); 
+            }
+        }else{ 
+//purmutationsに作った順列を追加 
+            purmutations.push(permutation); 
+        } 
+    }
+    makePermutation(array,purmutation,purmutations); 
+    return purmutations;    
+} 
+//問題の回答 
+function answer4(){ 
+    let maxNumber=0;
+    let newNumber=0; 
+    let numbersPermutation=permutation(【数字のリスト】); 
+    numbersPermutation.forEach((element)=>{
+        let newNumberString = "";
+        for (i = 0; i &lt; element.length; i++) { 
+            newNumberString += element[i].toString(); 
+        }
+        newNumber=parseInt(newNumberString); 
+        if (newNumber> maxNumber) {
+            maxNumber = newNumber;
+        }
+    });
+}</code></pre>
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <a class="btn back" href="../index.html">戻る</a>
+        </div>
+    </footer>
+</body>
+
+</html>
